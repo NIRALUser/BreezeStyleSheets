@@ -8,7 +8,7 @@
     "background:alternate": "#31363b",
     // The main color
     "highlight": "#b55162",
-    // Multiply each channel of the main color by .843137
+    // Multiply each channel of the main color by 0.843137
     "highlight:dark": "#984452",
     // Multiply each channel of the main color by 0.607843
     "highlight:alternate": "#6e313b",
@@ -31,12 +31,15 @@
     "tab:background:selected": "#31363b",
     "tab:background": "#2c3034",
     "tree": "#afafaf",
+    // HCT main color, honestly don't know what this does
     "slider:foreground": "#b55162",
+    // Did not modify this
     "slider:handle:background": "#1d2023",
     "menu:disabled": "#76797c",
     // Did not modify this
     "checkbox:light": "#58d3ff",
     "checkbox:disabled": "#c8c9ca",
+    // HCT main color, this modifies slider bar's color
     "scrollbar:hover": "#b55162",
     "scrollbar:background": "#1d2023",
     "scrollbar:background:hover": "#76797c",

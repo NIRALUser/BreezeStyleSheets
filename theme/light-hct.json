@@ -8,7 +8,7 @@
     "background:alternate": "#eaebec",
     // The main color
     "highlight": "rgba(181, 81, 98, 0.5)",
-    // Multiply each channel of the main color by .843137
+    // Multiply each channel of the main color by 0.843137
     "highlight:dark": "rgba(152, 68, 82, 0.5)",
     // Multiply each channel of the main color by 0.607843
     "highlight:alternate": "rgba(110, 49, 59, 0.6)",
@@ -31,15 +31,21 @@
     "tab:background:selected": "#eff0f1",
     "tab:background": "#d9d8d7",
     "tree": "#4b4b4b",
-    "slider:foreground": "#3daef3",
+    // HCT main color, honestly don't know what this is though
+    "slider:foreground": "#b55162",
+    // Did not modify this
     "slider:handle:background": "#eff0f1",
     "menu:disabled": "#bab9b8",
     // Did not modify this
     "checkbox:light": "#272b2f",
     "checkbox:disabled": "#6a6e71",
-    "scrollbar:hover": "rgba(51, 164, 223, 0.8)",
-    "scrollbar:background": "#eff0f1",
-    "scrollbar:background:hover": "#c7c7c6",
+    // HCT main color, this modifies slider handle's color
+    "scrollbar:hover": "rgba(181, 81, 98, 0.8)",
+    // Darkened this to make sliders visible
+    "scrollbar:background": "#bfc0c0",
+    // Darkened this to make sliders visible
+    "scrollbar:background:hover": "#9f9f9e",
+    // Tried to change this to super light version of HCT but didn't look good
     "button:background": "#eaebec",
     "button:background:pressed": "#bedfec",
     "button:border": "#bab9b8",
