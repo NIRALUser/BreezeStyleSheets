@@ -1,0 +1,56 @@
+// NOTE: This is a custom JSON file, where lines leading
+// with `//` are removed. No other comments are valid.
+// This was copied from dark.json and modified
+{
+    "foreground": "#eff0f1",
+    "foreground:light": "#ffffff",
+    "background": "#31363b",
+    "background:alternate": "#31363b",
+    // The main color
+    "highlight": "#b55162",
+    // Multiply each channel of the main color by .843137
+    "highlight:dark": "#984452",
+    // Multiply each channel of the main color by 0.607843
+    "highlight:alternate": "#6e313b",
+    "midtone": "#76797c",
+    "midtone:light": "#b0b0b0",
+    "midtone:dark": "#626568",
+    "midtone:hover": "#8a8d8f",
+    // This might need to be darkened
+    "view:checked": "#b55162",
+    // This is the HCT main color in rgb
+    "view:hover": "rgba(181, 81, 98, 0.1)",
+    "toolbar:horizontal:background": "#31363b",
+    "toolbar:vertical:background": "#31363b",
+    "view:corner": "#31363b",
+    "view:header:border": "#76797c",
+    "view:header": "#31363b",
+    "view:border": "#31363b",
+    "view:background": "#1d2023",
+    "text:background": "#1d2023",
+    "tab:background:selected": "#31363b",
+    "tab:background": "#2c3034",
+    "tree": "#afafaf",
+    "slider:foreground": "#b55162",
+    "slider:handle:background": "#1d2023",
+    "menu:disabled": "#76797c",
+    // Did not modify this
+    "checkbox:light": "#58d3ff",
+    "checkbox:disabled": "#c8c9ca",
+    "scrollbar:hover": "#b55162",
+    "scrollbar:background": "#1d2023",
+    "scrollbar:background:hover": "#76797c",
+    "button:background": "#31363b",
+    "button:background:pressed": "#454a4f",
+    "button:border": "#76797c",
+    "button:checked": "#626568",
+    "button:disabled": "#454545",
+    "close:hover": "#eff0f1",
+    "close:pressed": "#b33e3e",
+    "dock:background": "#31363b",
+    "dock:float": "#a2a2a2",
+    "critical": "#80404a",
+    "information": "#406880",
+    "question": "#634d80",
+    "warning": "#99995C"
+}
