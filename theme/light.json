@@ -31,8 +31,10 @@
     "checkbox:light": "#272b2f",
     "checkbox:disabled": "#6a6e71",
     "scrollbar:hover": "rgba(51, 164, 223, 0.8)",
-    "scrollbar:background": "#eff0f1",
-    "scrollbar:background:hover": "#c7c7c6",
+    // Darkened this to make sliders visible
+    "scrollbar:background": "#bfc0c0",
+    // Darkened this to make sliders visible
+    "scrollbar:background:hover": "#9f9f9e",
     "button:background": "#eaebec",
     "button:background:pressed": "#bedfec",
     "button:border": "#bab9b8",

@@ -519,16 +519,16 @@ QAbstractScrollArea::corner
  */
 QScrollBar:horizontal
 {
-    background-color: #eff0f1;
+    background-color: #bfc0c0;
     height: 0.65em;
     margin: 0.13em 0.65em 0.13em 0.65em;
-    border: 0.04em transparent #eff0f1;
+    border: 0.04em transparent #bfc0c0;
     border-radius: 0.17em;
 }
 
 QScrollBar:horizontal:hover
 {
-    background-color: #c7c7c6;
+    background-color: #9f9f9e;
 }
 
 QScrollBar::handle:horizontal
@@ -599,16 +599,16 @@ QScrollBar::sub-page:horizontal
 
 QScrollBar:vertical
 {
-    background-color: #eff0f1;
+    background-color: #bfc0c0;
     width: 0.65em;
     margin: 0.65em 0.13em 0.65em 0.13em;
-    border: 0.04em transparent #eff0f1;
+    border: 0.04em transparent #bfc0c0;
     border-radius: 0.17em;
 }
 
 QScrollBar:vertical:hover
 {
-    background-color: #c7c7c6;
+    background-color: #9f9f9e;
 }
 
 QScrollBar::handle:vertical
@@ -2509,3 +2509,214 @@ QFrame[frameShape][isWindow="true"][windowFrame="5"]
     border: 5px solid #d9d8d7;
     border-radius: 3px;
 }
+
+/**
+ *  QDOCKWIDGET TOOLTIP STYLESHEET
+ *  ------------------------------
+ */
+
+QAbstractButton#qt_dockwidget_closebutton
+{
+    qproperty-toolTip: "Close";
+}
+
+QAbstractButton#qt_dockwidget_floatbutton
+{
+    qproperty-toolTip: "Detach";
+}
+
+/**
+ *  ADVANCED DOCKING SYSTEM STYLESHEET
+ *  ----------------------------------
+ */
+
+/**
+ *  The general approach is as follows:
+ *  1. Turn `qproperty-icon` off.
+ *      This avoids having a weird background, preventing our desired icon.
+ *      This is presumably because ADS uses `qproperty-icon`.
+ *  2. Ensure the background is set.
+ *      This is to avoid any QToolButton styling hints when the
+ *      widget is clicked.
+ *  3. Set the QTOolButton width and height.
+ *      This gives us consistent icon sizes without compression.
+ *  4. Undo the border.
+ *      Must keep the border width identical to before (0.04em),
+ *      to avoid moving the widgets on pressed/hover events.
+ */
+
+#tabCloseButton,
+#dockAreaCloseButton,
+#tabsMenuButton,
+#detachGroupButton,
+#floatingTitleCloseButton,
+#floatingTitleMaximizeButton
+{
+    qproperty-icon: url(light:transparent.svg);
+    background: #eff0f1;
+    width: 1.2em;
+    height: 1.2em;
+    padding: 0em;
+    margin: 0em;
+    border: 0.04em transparent black;
+}
+
+#tabsMenuButton,
+#floatingTitleMaximizeButton
+{
+    /* Need to make the icon smaller, or else it's unusually large. */
+    width: 0.8em;
+}
+
+#tabCloseButton:hover,
+#dockAreaCloseButton:hover,
+#tabsMenuButton:hover,
+#detachGroupButton:hover,
+#floatingTitleCloseButton:hover,
+#floatingTitleMaximizeButton:hover,
+#tabCloseButton:pressed,
+#dockAreaCloseButton:pressed,
+#tabsMenuButton:pressed,
+#detachGroupButton:pressed,
+#floatingTitleCloseButton:pressed,
+#floatingTitleMaximizeButton:pressed
+{
+    background: #eff0f1;
+}
+
+#tabCloseButton,
+#dockAreaCloseButton,
+#floatingTitleCloseButton
+{
+    image: url(light:ads_close.svg);
+}
+
+#tabCloseButton:hover,
+#dockAreaCloseButton:hover,
+#floatingTitleCloseButton:hover
+{
+    image: url(light:ads_close_hover.svg);
+}
+
+#tabCloseButton:pressed,
+#dockAreaCloseButton:pressed,
+#floatingTitleCloseButton:pressed
+{
+    image: url(light:ads_close_pressed.svg);
+}
+
+#tabsMenuButton
+{
+    image: url(light:ads_menu_button.svg);
+}
+
+#tabsMenuButton:hover
+{
+    image: url(light:ads_menu_button_hover.svg);
+}
+
+#tabsMenuButton:pressed
+{
+    image: url(light:ads_menu_button_pressed.svg);
+}
+
+#tabsMenuButton::menu-indicator
+{
+    image: none;
+}
+
+#detachGroupButton
+{
+    image: url(light:ads_detach.svg);
+}
+
+#detachGroupButton:hover
+{
+    image: url(light:ads_detach_hover.svg);
+}
+
+#detachGroupButton:pressed
+{
+    image: url(light:ads_detach_hover_pressed.svg);
+}
+
+/* FLOATING */
+/* Disable the default icons when the dock is floating. */
+ads--CFloatingWidgetTitleBar
+{
+    qproperty-maximizeIcon: url(light:transparent.svg);
+    qproperty-normalIcon: url(light:transparent.svg);
+}
+
+#floatingTitleMaximizeButton
+{
+    image: url(light:ads_maximize.svg);
+}
+
+#floatingTitleMaximizeButton:hover
+{
+    image: url(light:ads_maximize_hover.svg);
+}
+
+#floatingTitleMaximizeButton:pressed
+{
+    image: url(light:ads_maximize_pressed.svg);
+}
+
+/**
+ *  Using the `maximized="true"`, `isMaximized="true"`, or other attribute
+ *  selectors don't work, and since the maximize button and minimize
+ *  button are always the same...
+ *
+ *  To get a nicer looking UI, just use the same maximize and restore
+ *  buttons.
+ */
+
+/* TABS */
+ads--CDockWidgetTab
+{
+    border: 0.04em solid #bab9b8;
+    border-top: 0.09em solid #bab9b8;
+    background-color: #d9d8d7;
+    padding: 0.23em;
+    min-width: 50px;
+    border-radius: 0.09em;
+    border-bottom-left-radius: 0em;
+    border-bottom-right-radius: 0em;
+}
+
+ads--CDockWidgetTab[activeTab="true"]
+{
+    background-color: #eff0f1;
+    border-top: 0.09em solid rgba(51, 164, 223, 0.5);
+    border-left: 0.04em solid #bab9b8;
+    border-right: 0.04em solid #bab9b8;
+    border-bottom: 0.04em tansparent #bab9b8;
+}
+
+ads--CDockWidgetTab QLabel
+{
+    background-color: #d9d8d7;
+}
+
+ads--CDockWidgetTab[activeTab="true"] QLabel
+{
+    background-color: #eff0f1;
+}
+
+/**
+ *  CDockWidgetTab doesn't seem to have the concept of `::next-selected`
+ *  and `::previous-selected`, so we just draw the borders for everything.
+ *  It's not nearly as pretty, but it's not bad either.
+ */
+
+/* OVERLAY */
+ads--CDockOverlayCross
+{
+    qproperty-iconFrameColor: rgba(51, 164, 223, 0.5);
+    qproperty-iconBackgroundColor: #eff0f1;
+    qproperty-iconOverlayColor: rgba(51, 164, 223, 0.5);
+    qproperty-iconArrowColor: #31363b;
+    qproperty-iconShadowColor: transparent;
+}
+
