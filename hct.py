@@ -25,10 +25,8 @@ args = parser.parse_args()
 theme_name = args.theme
 
 os.system(f'python configure.py --styles={theme_name} --resource custom.qrc')
-time.sleep(3)
 
 os.system(f'python configure.py --styles={theme_name} --extensions=all --pyqt6 --resource custom.qrc --compiled-resource resources.py')
-time.sleep(3)
 
 theme_dir = PATH_TO_HCT_REPO_THEMES_DIR / theme_name
 
@@ -36,7 +34,7 @@ if not theme_dir.exists():
     theme_dir.mkdir()
 
 stylesheet_path: Path = Path.cwd() / 'dist' / 'qrc' / theme_name / 'stylesheet.qss'
-shutil.move(str(stylesheet_path), str(theme_dir / 'stylesheet.qss'))
+shutil.copy(str(stylesheet_path), str(theme_dir / 'stylesheet.qss'))
 
 resource_path: Path = Path.cwd() / 'resources.py'
 
@@ -44,11 +42,11 @@ data = 0
 
 with open(resource_path, 'r') as original:
     data = original.read()
-    data = data.replace('PyQt5', 'PyQt6')
+    data = data.replace('PyQt5', 'PySide6')
 
 with open(resource_path, 'w') as new:
     new.write(data)
 
-shutil.move(str(resource_path), str(theme_dir / 'resources.py'))
+shutil.copy(str(resource_path), str(theme_dir / 'resources.py'))
 
 print('Success')
