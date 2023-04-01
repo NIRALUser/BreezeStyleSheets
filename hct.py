@@ -27,7 +27,11 @@ theme_name = args.theme
 
 os.system(f'python configure.py --styles={theme_name} --resource custom.qrc')
 
+# time.sleep(3)
+
 os.system(f'python configure.py --styles={theme_name} --extensions=all --pyqt6 --resource custom.qrc --compiled-resource resources.py')
+
+# time.sleep(3)
 
 theme_dir = PATH_TO_HCT_REPO_THEMES_DIR / theme_name
 
@@ -43,7 +47,7 @@ data = 0
 
 with open(resource_path, 'r') as original:
     data = original.read()
-    data = data.replace('from PyQt6 import QtCore', 'from PySide6 import QtCore')
+    data = data.replace('from PyQt5 import QtCore', 'from PySide6 import QtCore')
 
 with open(resource_path, 'w') as new:
     new.write(data)
