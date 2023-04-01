@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """Compiles the theme and moves stylesheet.qss and resources.py to the HCT repo.
 
 If you're using this, you will need to change PATH_TO_HCT_REPO_THEMES_DIR.
