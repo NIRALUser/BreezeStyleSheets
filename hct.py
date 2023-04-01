@@ -43,7 +43,7 @@ data = 0
 
 with open(resource_path, 'r') as original:
     data = original.read()
-    data = data.replace('PyQt5', 'PySide6')
+    data = data.replace('from PyQt6 import QtCore', 'from PySide6 import QtCore')
 
 with open(resource_path, 'w') as new:
     new.write(data)
