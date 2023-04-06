@@ -5,10 +5,10 @@ Then print as 3 integer code."""
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('r', help='red as int')
-parser.add_argument('g', help='green as int')
-parser.add_argument('b', help='blue as int')
-parser.add_argument('ratio', help='float as ratio')
+parser.add_argument("r", help="red as int")
+parser.add_argument("g", help="green as int")
+parser.add_argument("b", help="blue as int")
+parser.add_argument("ratio", help="float as ratio")
 args = parser.parse_args()
 
 r = int(args.r)
