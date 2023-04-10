@@ -1,19 +1,17 @@
-// NOTE: This is a custom JSON file, where lines leading
-// with `//` are removed. No other comments are valid.
 {
     "foreground": "#eff0f1",
     "foreground:light": "#ffffff",
     "background": "#31363b",
     "background:alternate": "#31363b",
     "highlight": "#3daee9",
-    "highlight:dark": "#2a79a3",
-    "highlight:alternate": "#2f88b7",
+    "highlight:dark": "#3392c4",
+    "highlight:alternate": "#25698d",
     "midtone": "#76797c",
     "midtone:light": "#b0b0b0",
     "midtone:dark": "#626568",
     "midtone:hover": "#8a8d8f",
-    "view:checked": "#334e5e",
-    "view:hover": "rgba(61, 173, 232, 0.1)",
+    "view:checked": "#3daee9",
+    "view:hover": "rgba(61, 174, 233, 0.1)",
     "toolbar:horizontal:background": "#31363b",
     "toolbar:vertical:background": "#31363b",
     "view:corner": "#31363b",

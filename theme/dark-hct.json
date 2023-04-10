@@ -1,24 +1,16 @@
-// NOTE: This is a custom JSON file, where lines leading
-// with `//` are removed. No other comments are valid.
-// This was copied from dark.json and modified
 {
     "foreground": "#eff0f1",
     "foreground:light": "#ffffff",
     "background": "#31363b",
     "background:alternate": "#31363b",
-    // The main color
     "highlight": "#b55162",
-    // Multiply each channel of the main color by 0.843137
     "highlight:dark": "#984452",
-    // Multiply each channel of the main color by 0.607843
     "highlight:alternate": "#6e313b",
     "midtone": "#76797c",
     "midtone:light": "#b0b0b0",
     "midtone:dark": "#626568",
     "midtone:hover": "#8a8d8f",
-    // This might need to be darkened
     "view:checked": "#b55162",
-    // This is the HCT main color in rgb
     "view:hover": "rgba(181, 81, 98, 0.1)",
     "toolbar:horizontal:background": "#31363b",
     "toolbar:vertical:background": "#31363b",
@@ -31,15 +23,11 @@
     "tab:background:selected": "#31363b",
     "tab:background": "#2c3034",
     "tree": "#afafaf",
-    // HCT main color, honestly don't know what this does
     "slider:foreground": "#b55162",
-    // Did not modify this
     "slider:handle:background": "#1d2023",
     "menu:disabled": "#76797c",
-    // Did not modify this
     "checkbox:light": "#58d3ff",
     "checkbox:disabled": "#c8c9ca",
-    // HCT main color, this modifies slider bar's color
     "scrollbar:hover": "#b55162",
     "scrollbar:background": "#1d2023",
     "scrollbar:background:hover": "#76797c",
