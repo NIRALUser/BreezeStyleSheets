@@ -119,4 +119,4 @@ for theme_path in Path("theme").glob("*.json"):
     shutil.copy(str(resource_path), str(theme_dir / "resources.py"))
     os.remove(str(resource_path))
 
-print("Successfully processed and moved all themes in theme/")
+print("\nSuccessfully processed and moved all themes in theme/")
