@@ -18,6 +18,23 @@ def load_json_ignore_comments(path: Path) -> dict:
     return json.loads("\n".join(lines))
 
 
+def parse_color_field(color: str) -> str:
+    """Parse color field in the format #rrggbb or rgba(r, g, b, a) to the format rrggbb.
+
+    :param color: #rrggbb (hexits) or rgba(r, g, b, a) (decimal)
+    :type color: str
+    :return: rrggbb
+    :rtype: str"""
+    if len(color) == 7:
+        return color[1:]
+    else:
+        color = color.replace("rgba(", "").replace(")", "")
+        channels: list[str] = color.split(",")
+        r, g, b = int(channels[0]), int(channels[1]), int(channels[2])
+        r, g, b = hex(r)[2:].zfill(2), hex(g)[2:].zfill(2), hex(b)[2:].zfill(2)
+        return r + g + b
+
+
 def hex_color_times_ratio(hex_color: str, ratio: float) -> str:
     """Given 6-hexit color code rrggbb, multiply by ratio
     and output a 6-hexit color code rrggbb.
@@ -41,8 +58,9 @@ def hex_color_times_ratio(hex_color: str, ratio: float) -> str:
         )
     )[2:]
     if len(rv) < 6:
-        rv = "0" * (6-len(rv)) + rv
+        rv = "0" * (6 - len(rv)) + rv
     return rv
+
 
 def hex_color_to_dec(hex_color: str) -> tuple[int, int, int]:
     """
