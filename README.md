@@ -1,24 +1,21 @@
 # BreezeStyleSheets fork
 
-This is a fork of [https://github.com/Alexhuszagh/BreezeStyleSheets](https://github.com/Alexhuszagh/BreezeStyleSheets) for HeadCircumferenceTool's GUI.
+This is a fork of [https://github.com/Alexhuszagh/BreezeStyleSheets](https://github.com/Alexhuszagh/BreezeStyleSheets) used for HeadCircumferenceTool's GUI stylesheets.
 
-I wrote a script that takes a theme name and 6-hexit color and modifies the theme, compiles, and puts it in the HCT repo.
+I wrote a script that compiles every theme JSON file in theme/ to `stylesheet.qss` and `resources.py` and moves them, along with the JSON file, over to the HCT repo.
 
-Copy theme/dark-hct.json (for dark theme) or theme/light-hct.json (for light theme) and paste to a new file in theme/.
+First, change `hct.py` `PATH_TO_HCT_REPO_THEMES_DIR` to the path to your HCT themes/ directory.
 
-Edit `hct.py` `PATH_TO_HCT_REPO_THEMES_DIR` with the path to your HCT themes/ directory.
+## Add to stylesheet
 
-Then run this command with the name of the file.
+Modify `append.qss`. Whatever is there will be appended to *every* theme's stylesheet when running `hct.py`.
 
-```text
-usage: python hct.py [-h] theme color
+If appending won't work for your change, then you'll need to modify `hct.py` to replace instead of append.
 
-positional arguments:
-  theme       name of theme
-  color       theme color as 6-hexit rrggbb string
+## Add new theme
 
-options:
-  -h, --help  show this help message and exit
-```
+Copy `theme/dark-hct.json` (for dark theme) or `theme/light-hct.json` (for light theme) and paste to a new file in `theme/`.
 
-For example, run `python hct.py dark-hct b55162` to compile dark-hct.json, modify colors in the JSON, compile to stylesheet.qss and resources.py, and copy to the HCT repo.
+Change the `"highlight"` field to the main color of your new theme. `hct.py` will overwrite several fields of your new JSON using this main color.
+
+For changes that are more involved than just adding a new color, `hct.py` would need to be modified.
