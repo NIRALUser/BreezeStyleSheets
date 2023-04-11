@@ -1,6 +1,0 @@
-/* These lines are appended to the compiled stylesheets by the hct.py script */
-
-/* To make QMessageBox font not bold */
-QMessageBox QLabel {
-    font-weight: normal;
-}

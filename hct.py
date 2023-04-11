@@ -2,8 +2,9 @@
 
 """Compiles the theme json files to stylesheet.qss and resources.py files.
 
-Appends the stuff in append.qss to each stylesheet. Never modify a stylesheet directly. To add to one,
-modify append.qss.
+Appends the stuff in append.css to each stylesheet. Never modify a stylesheet directly. To add to one,
+modify append.css. Ignore that it's a .css file, that's just because QSS doesn't have syntax highlighting.
+But everything you write in it should be QSS.
 
 Lastly, moves stylesheet.qss and resources.py to PATH_TO_HCT_REPO_THEMES_DIR.
 
@@ -101,7 +102,7 @@ for theme_path in Path("theme").glob("*.json"):
     # If something conflicts with what's already in the stylesheet, then maybe need to
     # overwrite instead of append
     # And if adding more things, definitely find a better way to do this lol
-    with open(Path("append.qss"), "r") as append_file:
+    with open(Path("append.css"), "r") as append_file:
         stuff_to_append: str = append_file.read()
     with open(stylesheet_path, "a") as stylesheet:
         stylesheet.write(stuff_to_append)
