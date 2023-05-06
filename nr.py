@@ -14,7 +14,7 @@ First create a new JSON in theme/. Make some changes. Make sure the main color i
 in the format #rrggbb (hex) or rgba(r, g, b, a) (decimal). This main color will be darkened and used
 for other fields.
 
-Then run python hct.py. Then you can fire up HCT with the new theme."""
+Then run python nr.py. Then you can fire up HCT with the new theme."""
 
 import os
 import shutil
@@ -32,8 +32,8 @@ PATH_TO_HCT_REPO_THEMES_DIR: Path = (
     / "Documents"
     / "GitHub"
     / "COMP523"
-    / "HeadCircumferenceTool"
-    / "src"
+    / "NeuroRuler"
+    / "NeuroRuler"
     / "GUI"
     / "themes"
 )
@@ -92,6 +92,12 @@ for theme_path in Path("theme").glob("*.json"):
     os.system(
         f"python configure.py --styles={theme_name} --extensions=all --pyqt6 --resource custom.qrc --compiled-resource resources.py"
     )
+    # If the python command wasn't successful, try python3
+    if not Path("resources.py").exists():
+        os.system(f"python3 configure.py --styles={theme_name} --resource custom.qrc")
+        os.system(
+            f"python3 configure.py --styles={theme_name} --extensions=all --pyqt6 --resource custom.qrc --compiled-resource resources.py"
+        )
 
     theme_dir = PATH_TO_HCT_REPO_THEMES_DIR / theme_name
     if not theme_dir.exists():

@@ -1,26 +1,34 @@
 # BreezeStyleSheets fork
 
-This is a fork of [https://github.com/Alexhuszagh/BreezeStyleSheets](https://github.com/Alexhuszagh/BreezeStyleSheets) used for HeadCircumferenceTool's GUI stylesheets.
+This is a fork of [https://github.com/Alexhuszagh/BreezeStyleSheets](https://github.com/Alexhuszagh/BreezeStyleSheets) used for [NeuroRuler's](https://github.com/NIRALUser/NeuroRuler) GUI stylesheets.
 
-I wrote a script that compiles every theme JSON file in theme/ to `stylesheet.qss` and `resources.py` and moves them, along with the JSON file, over to the HCT repo.
+I wrote a script that compiles every theme JSON file in theme/ to `stylesheet.qss` and `resources.py` and moves them, along with the JSON file, over to the NR repo.
 
-First, change `hct.py` `PATH_TO_HCT_REPO_THEMES_DIR` to the path to your HCT themes/ directory.
+First, change `nr.py`'s `PATH_TO_NR_REPO_THEMES_DIR` to the path to your NR themes/ directory.
+
+The script requires `pyrcc5`. On macOS, use this command.
+
+```sh
+pip3 install pyqt5 --config-settings --confirm-license= --verbose
+```
+
+[Source](https://stackoverflow.com/a/74377566)
 
 ## Add to stylesheet
 
-Modify `append.qss`. Whatever is there will be appended to *every* theme's stylesheet when running `hct.py`.
+Modify `append.qss`. Whatever is there will be appended to *every* theme's stylesheet when running `nr.py`.
 
-If appending won't work for your change, then you'll need to modify `hct.py` to replace instead of append.
+If appending won't work for your change, then you'll need to modify `nr.py` to replace instead of append.
 
 ## Add theme with new main color
 
-This won't create a brand-new theme. It'll just create a theme that looks the same as dark-hct or light-hct but with a different main color.
+This won't create a brand-new theme. It'll just create a theme that looks the same as dark-nr or light-nr but with a different main color.
 
-Copy `theme/dark-hct.json` (for dark theme) or `theme/light-hct.json` (for light theme) and paste to a new file in `theme/`.
+Copy `theme/dark-nr.json` (for dark theme) or `theme/light-nr.json` (for light theme) and paste to a new file in `theme/`.
 
-Change the `"highlight"` field to the main color of your new theme. `hct.py` will use this main color overwrite several fields of your new JSON.
+Change the `"highlight"` field to the main color of your new theme. `nr.py` will use this main color overwrite several fields of your new JSON.
 
-For changes that are more involved than just adding a new color, `hct.py` would need to be modified.
+For changes that are more involved than just adding a new color, `nr.py` would need to be modified.
 
 ## Modify color schemes
 
@@ -162,4 +170,4 @@ As the BSS README says, not a lot of fields should differ between themes. For ex
 ```
 </details>
 
-But if you really want to change the themes, then you would do so in `hct.py`.
+But if you really want to change the themes, then you would do so in `nr.py`.

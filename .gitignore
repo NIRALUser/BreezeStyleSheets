@@ -4,3 +4,7 @@ __pycache__
 *.pyc
 *.qrc
 !breeze.qrc
+bin/
+lib/
+include/
+pyvenv.cfg
